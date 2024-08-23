@@ -8,7 +8,7 @@
 登录之后根据权限来判断功能菜单，管理员登录可以操作图书信息以及添加系统的用户
 
 ![图片](https://github.com/user-attachments/assets/204f85ec-00ad-4603-a80b-8e1aeff6562e)
-如果是普通用户则只能流量图书信息，无法进行操作
+如果是普通用户则只能查阅图书信息，无法进行操作
 ![图片](https://github.com/user-attachments/assets/366986c7-f9ef-49ec-aee1-e9a4c2d936f7)
 管理员登录可以操作图书信息--添加
 ![图片](https://github.com/user-attachments/assets/608d5a48-e8c3-48eb-b77e-9be0e6df0293)
