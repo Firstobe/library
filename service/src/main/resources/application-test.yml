@@ -1,0 +1,49 @@
+# 应用服务 WEB 访问端口
+server:
+  port: 9090
+spring:
+  datasource:
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/shiyanshi?useUnicode=true&characterEncoding=utf8&&serverTimezone=Asia/Shanghai&useSSL=false
+  security:
+    permit-all-paths:
+      - /swagger-ui.html
+      - /swagger-resources/**
+      - /v2/api-docs
+      - /webjars/**
+      - /actuator/**
+      - /test/**
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    timeout: 10000
+    jedis:
+      pool:
+        max-active: 100
+        max-idle: 50
+        max-wait: 10000
+        min-idle: 10
+        time-between-eviction-runs: 60000
+jwt:
+  header: Authorization
+  # 令牌前缀
+  token-start-with: Bearer
+  # 使用Base64对该令牌进行编码
+  base64-secret: "ddO3MyALmETl6ahLwkT82DTgVjWY07TNyd0XVvK9A9Q="
+  # 令牌过期时间 此处单位/毫秒
+  token-validity-in-seconds: 14400000
+rsa:
+  # 私钥文件路径
+  private-key: MIIBVAIBADANBgkqhkiG9w0BAQEFAASCAT4wggE6AgEAAkEAgKyutJaIMJXRtqD8d4H4rBRMGBopUjPVRgDkTB1HlYWq7nsoZozBlB2gIfYZm0hHirxLFvWArq/EzeXcKjBNlQIDAQABAkA/l5gcDc0u3cwwCu3bDjPcr4dP3hYP1ygPGb+6UjofjaS08bnyMIrpfoFwRGPnhUz61mVBw5roO8UbO2YJi1NdAiEAyNANuln0DT4tEJpNOMDR1BHP0I6X2iasqSngJZ11BYsCIQCkCW5lIFgzI1HXtdXx80N5iJgglbd1Gfnx1DdnI7edXwIhAJOvH0l7ula68V2SfVRNyoNSjiltlRQk+Tp3x5ciU9u9AiBCXHJlxOUJoyNMAgsQe9pzQ1hP7mGupRihxbm4JxH0PwIgBR/sm0+ihxQRLGEVB3EFrbuvQ3rf/+evqNGJKyuOm6A=
+  # 公钥文件路径
+  public-key: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAICsrrSWiDCV0bag/HeB+KwUTBgaKVIz1UYA5EwdR5WFqu57KGaMwZQdoCH2GZtIR4q8Sxb1gK6vxM3l3CowTZUCAwEAAQ==
+knife4j:
+  enable: true
+  #true则是生产环境不允许访问knife4j
+  production: false
+
+logging:
+  level:
+    org.example.librarysystem: debug
