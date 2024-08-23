@@ -2,7 +2,7 @@
 图书管理系统
 整个系统采取了前后端分离的设计：后端采用了Springboot作为系统的开发基础，使用springsecurity框架实现认证、权限控制，采用了mybatis-plus框架完成DAO层的处理，使用redis对数据进行了缓存，同时使用Springboot的默认日志logback，作为日志框架来存储日志。使用的是MySQL作为存储数据库。
 前端采用了elmentadmin模版进行改造开发，主要是使用了vue+elementui进行开发。
-登录界面
+管理员的登录账号/密码：admin/123456 普通用户：user01/123456登录界面
 ![1724410417730](https://github.com/user-attachments/assets/05f10fb5-d212-43d0-991c-5f018872b05e)
 
 登录之后根据权限来判断功能菜单，管理员登录可以操作图书信息以及添加系统的用户
